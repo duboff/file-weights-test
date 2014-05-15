@@ -6,6 +6,7 @@ require 'sinatra/partial'
 require 'haml'
 
 require_relative 'controllers/application'
+require_relative 'data_mapper_setup'
 
 enable :sessions
 set :session_secret, 'a very long and random'
