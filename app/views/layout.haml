@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title File gravity 
+    -# <script src="/js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    %link(rel="stylesheet" href="css/reset.css")
+    %link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="css/application.css")
+
+    %script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{:href => '#'} File Weights
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => '#'} Main
+            %li
+              %a{:href => '#about'} Github
+            %li
+              %a{:href => '#contact'} Contact
+    .container
+      =yield
