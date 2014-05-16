@@ -77,6 +77,8 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -111,6 +113,7 @@ DEPENDENCIES
   json
   pg
   rack-flash3
+  rest-client
   rspec
   shotgun
   sinatra

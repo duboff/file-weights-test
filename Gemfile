@@ -9,6 +9,7 @@ gem 'database_cleaner'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'haml'
+gem 'rest-client'
 
 group :development, :test do
   gem 'capybara'
