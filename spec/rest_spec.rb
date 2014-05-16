@@ -6,17 +6,35 @@ describe Client do
 
   let(:client) {Client.new}
 
-  it 'can log in and get cookies' do
-    client.login('mdubov@gmail.com', '1567lamerz')
-    expect(client.cookies["device_credentials"]).not_to be_empty
-    expect(client.cookies["my_session_id"]).not_to be_empty
-    expect(client.cookies["domain"]).to eq ".workshare.com"
+  context 'logging in' do
+    it 'no error when logging in' do
+      client.login('mdubov@gmail.com', '1567lamerz')
+      expect(client.response.code).to eq 201
+    end
+
+    it 'cookies are set on login' do
+      client.login('mdubov@gmail.com', '1567lamerz')
+      expect(client.cookies["device_credentials"]).not_to be_empty
+      expect(client.cookies["my_session_id"]).not_to be_empty
+      expect(client.cookies["domain"]).to eq ".workshare.com"
+    end
   end
 
-  it 'can get a list of files' do
-    client.login('mdubov@gmail.com', '1567lamerz')
-    client.get_file_list
-    expect(client.file_list.count).to eq 2
+  context 'once logged in' do
+
+    before  do
+      client.login('mdubov@gmail.com', '1567lamerz')
+      client.get_file_list
+    end
+
+    it 'can get a list of files' do
+      expect(client.file_list.count).to eq 2
+    end
+
+    it 'gets the right file names' do
+      expect(client.file_list.first["name"]).to eq 'Workshare for mobile'
+      expect(client.file_list.last["name"]).to eq 'Getting Started on Workshare'
+    end
   end
 
 end
