@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-require 'parser'
+require 'processor'
 require 'rest'
 
 

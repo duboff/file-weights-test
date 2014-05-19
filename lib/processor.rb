@@ -42,8 +42,4 @@ class Processor
     self.files.reject { |file| self.file_types.values.flatten.include?(file[:ext]) }
   end
 
-
-
-
-
 end
