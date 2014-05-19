@@ -44,6 +44,10 @@ describe Processor do
     expect(processor.documents).to eq [ {:name=>"test", :ext=>"docx", :size=>21762} ]
   end
 
+  it 'has a list of binaries' do
+    expect(processor.binaries).to eq [ {:name=>"10mb", :ext=>"bin", :size=>10485760} ]
+  end
+
 
 
 

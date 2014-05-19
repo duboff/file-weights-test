@@ -30,6 +30,12 @@ class Processor
     self.files.select {|file| self.file_types[:documents].include?(file[:ext]) }
   end
 
+  def binaries
+    self.files.select {|file| self.file_types[:binaries].include?(file[:ext]) }
+  end
+
+
+
 
 
 end
