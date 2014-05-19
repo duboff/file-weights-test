@@ -35,6 +35,15 @@ describe Client do
       expect(client.file_list.first["name"]).to eq 'Workshare for mobile'
       expect(client.file_list.last["name"]).to eq 'Getting Started on Workshare'
     end
+
+    it 'gets the file sizes' do
+      expect(client.file_list.first["size"]).to eq 59245396
+    end
+
+    it 'gets file extensions' do
+      expect(client.file_list.first["extension"]).to eq "mp4"
+    end
+
   end
 
 end
