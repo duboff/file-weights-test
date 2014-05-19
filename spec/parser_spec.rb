@@ -40,6 +40,10 @@ describe Processor do
                                      {:name=>"Workshare for mobile", :ext=>"mp4", :size=>59245396} ]
   end
 
+  it 'has a list of documents' do
+    expect(processor.documents).to eq [ {:name=>"test", :ext=>"docx", :size=>21762} ]
+  end
+
 
 
 
