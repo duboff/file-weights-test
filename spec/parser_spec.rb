@@ -17,17 +17,11 @@ describe Parser do
 
 
   it 'transforms file list into a hash' do
-    # stub_request(:get, client.base_url).
-    #   with(:body => { files: [{name: 'file1', size: 1000, type: "mp3"},
-    #                           {name: 'file2', size: 2000, type: "pdf"}]
-    #                   }
-    #        )
-
     client.login('mdubov@gmail.com', '1567lamerz')
     client.get_file_list
     list = client.file_list
     file_array = parser.parse(list)
-    expect(file_array).to eq [{:name=>"Workshare for mobile", :ext=>"mp4", :size=>59245396},
-                              {:name=>"Getting Started on Workshare", :ext=>"pdf", :size=>1951360}]
+    expect(file_array).to eq [{name: "Workshare for mobile", ext: "mp4", size: 59245396},
+                              {name: "Getting Started on Workshare", ext: "pdf", size: 1951360}]
   end
 end
