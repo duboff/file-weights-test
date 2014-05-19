@@ -32,8 +32,12 @@ describe Processor do
   end
 
   it 'has a list of songs' do
-    expect(processor.songs).to eq [ { name: 'Islands', ext: "mp3", size: 4065408 }
-                                    ]
+    expect(processor.songs).to eq [ { name: 'Islands', ext: "mp3", size: 4065408 }]
+  end
+
+  it 'has a list of videos' do
+    expect(processor.videos).to eq [ {:name=>"video1", :ext=>"avi", :size=>6094376},
+                                     {:name=>"Workshare for mobile", :ext=>"mp4", :size=>59245396} ]
   end
 
 

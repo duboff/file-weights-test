@@ -22,6 +22,10 @@ class Processor
     self.files.select {|file| self.file_types[:songs].include?(file[:ext]) }
   end
 
+  def videos
+    self.files.select {|file| self.file_types[:videos].include?(file[:ext]) }
+  end
+
 
 
 end
