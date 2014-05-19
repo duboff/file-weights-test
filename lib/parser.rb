@@ -1,9 +1,25 @@
-class Parser
+class Processor
 
-  attr_accessor :parsed_list
+  attr_accessor :files
+
+  attr_reader :file_types
+
+  def initialize
+    @file_types = {
+      songs: ["mp3", "aac", "ogg", "wma", "flac", "wav"],
+      videos: ["avi", "mp4", "mkv", "mov", "mpg", "mpeg"],
+      documents: ["docx", "xlsx", "pptx", "odt", "doc", "xls", "ppt", "sxw", "stw", "sxc", "stc", "sxi", "sti", "sxd", "std", "sxm"],
+      binaries: ["bin"],
+      text: ["txt"]
+    }
+  end
 
   def parse(array)
-    self.parsed_list = array.map {|file| {name: file["name"], ext: file["extension"], size: file["size"]} }
+    self.files = array.map {|file| {name: file["name"], ext: file["extension"], size: file["size"]} }
+  end
+
+  def songs
+    self.files.select {|file| self.file_types[:songs].include?(file[:ext]) }
   end
 
 

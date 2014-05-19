@@ -29,20 +29,20 @@ describe Client do
     end
 
     it 'can get a list of files' do
-      expect(client.file_list.count).to eq 2
+      expect(client.file_list.count).to eq 7
     end
 
     it 'gets the right file names' do
-      expect(client.file_list.first["name"]).to eq 'Workshare for mobile'
+      expect(client.file_list[-2]["name"]).to eq 'Workshare for mobile'
       expect(client.file_list.last["name"]).to eq 'Getting Started on Workshare'
     end
 
     it 'gets the file sizes' do
-      expect(client.file_list.first["size"]).to eq 59245396
+      expect(client.file_list[-2]["size"]).to eq 59245396
     end
 
     it 'gets file extensions' do
-      expect(client.file_list.first["extension"]).to eq "mp4"
+      expect(client.file_list[-2]["extension"]).to eq "mp4"
     end
 
   end
