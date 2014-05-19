@@ -34,6 +34,10 @@ class Processor
     self.files.select {|file| self.file_types[:binaries].include?(file[:ext]) }
   end
 
+  def text
+    self.files.select {|file| self.file_types[:text].include?(file[:ext]) }
+  end
+
 
 
 

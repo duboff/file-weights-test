@@ -48,6 +48,10 @@ describe Processor do
     expect(processor.binaries).to eq [ {:name=>"10mb", :ext=>"bin", :size=>10485760} ]
   end
 
+  it 'has a list of text files' do
+    expect(processor.text).to eq [ {:name=>"bla", :ext=>"txt", :size=>7} ]
+  end
+
 
 
 
