@@ -52,6 +52,10 @@ describe Processor do
     expect(processor.text).to eq [ {:name=>"bla", :ext=>"txt", :size=>7} ]
   end
 
+  it 'has a list of other files' do
+    expect(processor.other).to eq [ {:name=>"Getting Started on Workshare", :ext=>"pdf", :size=>1951360} ]
+  end
+
 
 
 

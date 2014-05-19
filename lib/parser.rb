@@ -38,6 +38,10 @@ class Processor
     self.files.select {|file| self.file_types[:text].include?(file[:ext]) }
   end
 
+  def other
+    self.files.reject { |file| self.file_types.values.flatten.include?(file[:ext]) }
+  end
+
 
 
 
