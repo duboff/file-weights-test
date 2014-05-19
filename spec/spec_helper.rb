@@ -7,6 +7,7 @@ require './app/server'
 # require './spec/helpers/links'
 require 'database_cleaner'
 require 'capybara/rspec'
+# require 'webmock/rspec'
 
 Capybara.app = Sinatra::Application.new
 

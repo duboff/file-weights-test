@@ -2,9 +2,10 @@ require 'spec_helper'
 
 require 'rest'
 
+
 describe Client do
 
-  let(:client) {Client.new}
+  let(:client) { Client.new }
 
   context 'logging in' do
     it 'no error when logging in' do
