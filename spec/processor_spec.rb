@@ -56,6 +56,10 @@ describe Processor do
     expect(processor.other).to eq [ {:name=>"Getting Started on Workshare", :ext=>"pdf", :size=>1951360} ]
   end
 
+  # it 'assigns types to files' do
+  #   processor.process_files
+  # end
+
 
 
 

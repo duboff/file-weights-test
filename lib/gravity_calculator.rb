@@ -13,4 +13,13 @@ class GravityCalculator
       other: 1 }
   end
 
+  def additional_gravity(file_type)
+    file_type == :text ? 100 : 0
+  end
+
+
+  def gravity(file, type)
+    file[:size] * self.factor_table[type] + self.additional_gravity(type)
+  end
+
 end
