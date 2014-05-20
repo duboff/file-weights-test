@@ -1,1 +1,7 @@
-%h1 This is index
+%form{ :action => "/gravity", :method => "post", role: 'form', class: 'form-signin'}
+  .form-signin-heading.text-center
+    %img.logo(src="/images/wslogobig.jpg") 
+    %h2 Sign in
+  %input{:type => "email", :name => "email", placeholder: "Email address", class: "form-control", id: "email_field"}
+  %input{:type => "password", :name => "password", placeholder: 'Password', class: "form-control", id: "password_field"}
+  %input{:type => "submit", :value => "Submit", :class => "btn btn-lg btn-primary btn-block"}

@@ -8,8 +8,10 @@ require 'haml'
 require_relative 'controllers/application'
 require_relative 'data_mapper_setup'
 
+require './lib/rest'
+
 enable :sessions
-set :session_secret, 'a very long and random'
+set :session_secret, 'a very long and random value'
 set :partial_template_engine, :haml
 set :static, true
 set :public_folder, File.join(File.dirname(__FILE__), '..', 'public')
