@@ -1,19 +1,16 @@
 require 'spec_helper'
 
+include LoginHelpers
+
 feature 'User provides Workshare credentials' do
   it 'can use login form' do
-    visit '/'
-    fill_in 'email_field', with: "mdubov@gmail.com"
-    fill_in 'password_field', with: "1567lamerz"
-    click_button 'Submit'
+    log_in('mdubov@gmail.com', '1567lamerz')
+
     expect(page).to have_content 'Successfully signed in'
   end
 
   it 'cannot login with wrong credentials' do
-    visit '/'
-    fill_in 'email_field', with: "bla@bla.com"
-    fill_in 'password_field', with: "blabla"
-    click_button 'Submit'
+    log_in("bla@bla.com", "blabla")
     expect(page).to have_content 'incorrect'
   end
 end

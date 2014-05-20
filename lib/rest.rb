@@ -21,9 +21,6 @@ class Client
     RestClient.post("#{base_url}/user_sessions.json",{'user_session[email]' => email, 'user_session[password]' => password, 'device[app_uid]' => api_key}) do |response, request, result|
       self.response = response
     end
-
-
-    # self.response = RestClient.post "#{base_url}/user_sessions.json", {'user_session[email]' => email, 'user_session[password]' => password, 'device[app_uid]' => api_key}
   end
 
   def cookies
