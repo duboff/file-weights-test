@@ -16,7 +16,7 @@ post '/gravity' do
     flash[:notice] = 'Successfully signed in!'
     # redirect to '/gravity'
   else
-    flash.now[:errors] = ["The email or password are incorrect"]
-    redirect to '/'
+    flash[:errors] = ["The email or password are incorrect"]
+    redirect '/'
   end
 end
