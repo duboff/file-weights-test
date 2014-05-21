@@ -38,4 +38,19 @@ feature 'Gravity Report' do
     expect(page).to have_content '1 Document - 0.05'
   end
 
+  it 'prints the right number of documents' do
+    expect(page).to have_content '1 Binary'
+  end
+
+  it 'prints the right gravity for binaries' do
+    expect(page).to have_content '1 Binary - 10.0'
+  end
+  it 'prints the right number of text' do
+    expect(page).to have_content '1 Text'
+  end
+
+  it 'prints the right gravity for text' do
+    expect(page).to have_content '1 Text - 100.0'
+  end
+
 end
