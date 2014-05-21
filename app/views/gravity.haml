@@ -8,6 +8,7 @@
     %li= "#{@documents.count} Document#{'s' unless @documents.count == 1} -  #{@documents.inject(0) {|res, doc| res + @calculator.gravity(doc, :document)} }"
     %li= "#{@binaries.count} Binary#{'s' unless @binaries.count == 1} -  #{@binaries.inject(0) {|res, bin| res + @calculator.gravity(bin, :binary)} }"
     %li= "#{@text.count} Text#{'s' unless @text.count == 1} -  #{@text.inject(0) {|res, tex| res + @calculator.gravity(tex, :text)} }"
+    %li= "#{@other.count} Other -  #{@other.inject(0) {|res, other| res + @calculator.gravity(other, :other)} }"
 
 
 

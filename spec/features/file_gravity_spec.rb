@@ -53,4 +53,12 @@ feature 'Gravity Report' do
     expect(page).to have_content '1 Text - 100.0'
   end
 
+  it 'prints the right number of text' do
+    expect(page).to have_content '1 Other'
+  end
+
+  it 'prints the right gravity for text' do
+    expect(page).to have_content '1 Other - 1.0'
+  end
+
 end
