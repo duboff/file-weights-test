@@ -20,7 +20,6 @@ describe Processor do
     processor.parse(list)
   end
 
-
   it 'transforms file list into a hash with only required info' do
     expect(processor.files).to eq [{:name=>"bla", :ext=>"txt", :size=>7},
                                    {:name=>"10mb", :ext=>"bin", :size=>10485760},
