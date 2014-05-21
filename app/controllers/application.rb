@@ -43,5 +43,14 @@ get '/gravity' do
   @text = processor.text
   @other = processor.other
 
+  @total = total_gravity(@songs, :song, @calculator) +
+    total_gravity(@videos, :video, @calculator) +
+    total_gravity(@documents, :document, @calculator) +
+    total_gravity(@binaries, :binary, @calculator) +
+    total_gravity(@text, :text, @calculator) +
+    total_gravity(@other, :other, @calculator)
+
+
+
   haml :gravity
 end

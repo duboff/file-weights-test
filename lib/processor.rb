@@ -1,5 +1,7 @@
 class Processor
 
+  require 'gravity_calculator'
+
   attr_accessor :files
 
   attr_reader :file_types
@@ -41,5 +43,11 @@ class Processor
   def other
     self.files.reject { |file| self.file_types.values.flatten.include?(file[:ext]) }
   end
+
+  def total_size
+    self.files.inject(0) {|res, file| res + file[:size] / 1000000}
+  end
+
+
 
 end

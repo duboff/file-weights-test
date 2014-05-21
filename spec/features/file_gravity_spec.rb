@@ -61,4 +61,8 @@ feature 'Gravity Report' do
     expect(page).to have_content '1 Other - 1.0'
   end
 
+  it 'calculates total correctly' do
+    expect(page).to have_content 'Total: 207.45'
+  end
+
 end
