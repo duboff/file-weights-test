@@ -18,7 +18,16 @@ feature 'Gravity Report' do
   end
 
   it 'prints the right gravity for songs' do
-    expect(page).to have_content '3.6'
+    expect(page).to have_content '4.9'
+  end
+
+  it 'prints the right number of videos' do
+    expect(page).to have_content '2 Videos'
+    # expect(page).not_to have_content '1 Songs'
+  end
+
+  it 'prints the right gravity for videos' do
+    expect(page).to have_content '4.9'
   end
 
 end
