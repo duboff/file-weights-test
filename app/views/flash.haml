@@ -1,6 +1,8 @@
 - if flash[:notice]
-  .alert.alert-info
+  .alert.alert-info.alert-dismissable
+    %button.close{:type => 'button', :data => {:dismiss => "alert"}, :aria => {:hidden => "true"} } &times
     =flash[:notice]
 - if flash[:errors]
-  .alert.alert-danger
+  .alert.alert-danger.alert-dismissable
+    %button.close{:type => 'button', :data => {:dismiss => "alert"}, :aria => {:hidden => "true"}} &times
     =flash[:errors]

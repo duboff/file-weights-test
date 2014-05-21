@@ -7,7 +7,7 @@ class Client
 
   def initialize
     @base_url = 'https://my.workshare.com/api/open-v1.0/'
-    @api_key =  ENV['WS_KEY']
+    @api_key =  ENV['WS_KEY'] || settings.api_key
   end
 
 
