@@ -7,6 +7,7 @@ require 'haml'
 
 require_relative 'controllers/application'
 require_relative 'data_mapper_setup'
+require_relative 'helpers/application'
 
 require './lib/rest'
 require './lib/processor'

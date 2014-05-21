@@ -14,6 +14,11 @@ feature 'Gravity Report' do
 
   it 'prints the right number of songs' do
     expect(page).to have_content '1 Song'
+    expect(page).not_to have_content '1 Songs'
+  end
+
+  it 'prints the right gravity for songs' do
+    expect(page).to have_content '3.6'
   end
 
 end

@@ -66,6 +66,9 @@ GEM
       tilt
     json (1.7.7)
     json_pure (1.7.7)
+    linguistics (2.0.3)
+      loggability (~> 0.7)
+    loggability (0.11.0)
     mime-types (2.2)
     mini_portile (0.6.0)
     multi_json (1.6.1)
@@ -119,6 +122,7 @@ DEPENDENCIES
   dm-postgres-adapter
   haml
   json
+  linguistics
   pg
   rack-flash3
   rest-client

@@ -2,6 +2,8 @@ require 'spec_helper'
 
 require 'gravity_calculator'
 
+include RoundHelpers
+
 describe GravityCalculator do
 
   let(:calc) { GravityCalculator.new }
@@ -37,25 +39,25 @@ describe GravityCalculator do
   context 'calculating total weight' do
     it 'songs' do
       song = {:name=>"Islands", :ext=>"mp3", :size=>4065408}
-      size = song[:size] * 1.2
+      size = roundup(song[:size] * 1.2 /1000000)
       expect(calc.gravity(song, :song)).to eq size
     end
 
     it 'videos' do
       video = {:name=>"video1", :ext=>"avi", :size=>6094376}
-      size = video[:size] * 1.4
+      size = roundup(video[:size] * 1.4 /1000000)
       expect(calc.gravity(video, :video)).to eq size
     end
 
     it 'documents' do
       document = {:name=>"test", :ext=>"docx", :size=>21762}
-      size = document[:size] * 1.1
+      size = roundup(document[:size] * 1.1 /1000000)
       expect(calc.gravity(document, :document)).to eq size
     end
 
     it 'text' do
       text = {:name=>"bla", :ext=>"txt", :size=>7}
-      size = text[:size] + 100
+      size = roundup(text[:size]/1000000 + 100)
       expect(calc.gravity(text, :text)).to eq size
     end
 

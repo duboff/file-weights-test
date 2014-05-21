@@ -11,6 +11,7 @@ gem 'sinatra-partial'
 gem 'haml'
 gem 'rest-client'
 gem 'sinatra-redirect-with-flash'
+gem 'linguistics'
 
 
 group :development, :test do

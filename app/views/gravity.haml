@@ -3,4 +3,5 @@
   %p= "Current user: #{@email}"
   .report-body
   %ul
-    %li= "{@songs.count} Songs "
+    %li= "#{@songs.count} Song#{'s' unless @songs.count == 1} -  #{@songs.inject(0) {|res, song| res + @calculator.gravity(song, :song)} }"
+
