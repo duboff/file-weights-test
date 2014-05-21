@@ -1,16 +1,36 @@
-.well.report
-  %h2 Gravity Report
-  %p= "Current user: #{@email}"
-  .report-body
-  %ul
-    %li= "#{@songs.count} Song#{'s' unless @songs.count == 1} -  #{ total_gravity(@songs, :song, @calculator) }"
-    %li= "#{@videos.count} Video#{'s' unless @videos.count == 1} -  #{ total_gravity(@videos, :video, @calculator) }"
-    %li= "#{@documents.count} Document#{'s' unless @documents.count == 1} -  #{total_gravity(@documents, :document, @calculator) }"
-    %li= "#{@binaries.count} Binary#{'s' unless @binaries.count == 1} -  #{ total_gravity(@binaries, :binary, @calculator) }"
-    %li= "#{@text.count} Text#{'s' unless @text.count == 1} -  #{ total_gravity(@text, :text, @calculator) }"
-    %li= "#{@other.count} Other -  #{ total_gravity(@other, :other, @calculator) }"
-.total
-  %p= "Total: #{@total}"
+.col-md-6.col-md-offset-3
+  .panel.panel-default.report
+    .panel-heading
+      %h2 Gravity Report
+      %p= "Current user: #{@email}"
+    %table.table.table-hover
+      %tr.total.info
+        %td Files
+        %td Gravity
+      %tr
+        %td= "#{@songs.count} Song#{'s' unless @songs.count == 1} "
+        %td= "#{ total_gravity(@songs, :song, @calculator) }"
+      %tr
+        %td= "#{@videos.count} Video#{'s' unless @videos.count == 1} "
+        %td= "#{ total_gravity(@videos, :video, @calculator) }"
+      %tr
+        %td= "#{@documents.count} Document#{'s' unless @documents.count == 1} "
+        %td= "#{total_gravity(@documents, :document, @calculator) }"
+      %tr
+        %td= "#{@binaries.count} Binary#{'s' unless @binaries.count == 1} "
+        %td= "#{ total_gravity(@binaries, :binary, @calculator) }"
+      %tr
+        %td= "#{@text.count} Text#{'s' unless @text.count == 1} "
+        %td= "#{ total_gravity(@text, :text, @calculator) }"
+      %tr
+        %td= "#{@other.count} Other" 
+        %td= "#{ total_gravity(@other, :other, @calculator) }"
+      %tr.total  
+        %td= "Total:"
+        %td= "#{@total}"
+      %tr.total
+        %td= "Additional gravity:"
+        %td= "#{(@total - @size).round(2)}"
 
 
 

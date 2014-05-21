@@ -11,3 +11,4 @@ helpers do
     files.inject(0) {|res, file| res + calc.gravity(file, type)}
   end
 end
+

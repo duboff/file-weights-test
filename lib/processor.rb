@@ -1,7 +1,5 @@
 class Processor
 
-  require 'gravity_calculator'
-
   attr_accessor :files
 
   attr_reader :file_types

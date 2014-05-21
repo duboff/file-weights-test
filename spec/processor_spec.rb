@@ -4,17 +4,13 @@ require 'processor'
 require 'rest'
 
 
-
-# stub_request(:post, "www.example.com").
-#   with(:body => {:data => {:a => '1', :b => 'five'}})
-
 describe Processor do
 
   let(:client) { Client.new }
   let(:processor) { Processor.new }
 
   before do
-    client.login('mdubov@gmail.com', '1567lamerz')
+    client.login(settings.ws_email, settings.ws_password)
     client.get_file_list
     list = client.file_list
     processor.parse(list)
@@ -54,13 +50,5 @@ describe Processor do
   it 'has a list of other files' do
     expect(processor.other).to eq [ {:name=>"Getting Started on Workshare", :ext=>"pdf", :size=>1951360} ]
   end
-
-  # it 'assigns types to files' do
-  #   processor.process_files
-  # end
-
-
-
-
 
 end

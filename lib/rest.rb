@@ -1,11 +1,5 @@
 require 'rest_client'
 
-
-# response = RestClient.post 'https://my.workshare.com/api/open-v1.0/user_sessions.json', {'user_session[email]' => 'mdubov@gmail.com', 'user_session[password]' => '1567lamerz', 'device[app_uid]' => 'c63436cf-1101'}
-
-# coo = response.cookies
-
-# response2 = RestClient.get "https://my.workshare.com/api/open-v1/files.json", {:cookies => coo}
 class Client
 
   attr_reader :base_url, :api_key
@@ -13,7 +7,7 @@ class Client
 
   def initialize
     @base_url = 'https://my.workshare.com/api/open-v1.0/'
-    @api_key = 'c63436cf-1101'
+    @api_key =  settings.api_key || ENV['WS_KEY']
   end
 
 
@@ -28,7 +22,7 @@ class Client
   end
 
   def get_file_list
-    server_response = RestClient.get "#{base_url}/files.json", {:cookies => cookies}
+    server_response = RestClient.get "#{base_url}/files.json", { cookies: cookies, 'limit' => 100000 }
     self.file_list = JSON.parse(server_response)["files"]
   end
 

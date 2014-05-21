@@ -1,4 +1,5 @@
 get '/' do
+  session[:email], session[:password] = nil
   haml :index
 end
 
@@ -49,6 +50,8 @@ get '/gravity' do
     total_gravity(@binaries, :binary, @calculator) +
     total_gravity(@text, :text, @calculator) +
     total_gravity(@other, :other, @calculator)
+
+  @size = processor.total_size
 
 
 

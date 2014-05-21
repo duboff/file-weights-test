@@ -45,3 +45,10 @@ body {
 .report {
   margin-top: 50px;
 }
+.total {
+  font-weight: bold;
+}
+
+/*td {
+  padding-left: 10px;
+}*/
