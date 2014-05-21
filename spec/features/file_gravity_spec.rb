@@ -27,7 +27,15 @@ feature 'Gravity Report' do
   end
 
   it 'prints the right gravity for videos' do
-    expect(page).to have_content '4.9'
+    expect(page).to have_content '2 Videos - 91.5'
+  end
+
+  it 'prints the right number of documents' do
+    expect(page).to have_content '1 Document'
+  end
+
+  it 'prints the right gravity for videos' do
+    expect(page).to have_content '1 Document - 0.05'
   end
 
 end

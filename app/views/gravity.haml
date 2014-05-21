@@ -5,4 +5,6 @@
   %ul
     %li= "#{@songs.count} Song#{'s' unless @songs.count == 1} -  #{@songs.inject(0) {|res, song| res + @calculator.gravity(song, :song)} }"
     %li= "#{@videos.count} Video#{'s' unless @videos.count == 1} -  #{@videos.inject(0) {|res, video| res + @calculator.gravity(video, :video)} }"
+    %li= "#{@documents.count} Document#{'s' unless @documents.count == 1} -  #{@documents.inject(0) {|res, doc| res + @calculator.gravity(doc, :document)} }"
+
 
