@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'data_mapper'
-require 'dm-postgres-adapter'
 require 'rack-flash'
 require 'sinatra/partial'
 require 'sinatra/config_file'
@@ -23,3 +21,5 @@ set :public_folder, File.join(File.dirname(__FILE__), '..', 'public')
 config_file '../config.yml'
 
 use Rack::Flash
+
+env = ENV['RACK_ENV'] || "development"
