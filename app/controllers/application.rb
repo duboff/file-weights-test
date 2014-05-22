@@ -17,7 +17,7 @@ post '/gravity' do
     flash[:notice] = 'Successfully signed in!'
     redirect to '/gravity'
   else
-    flash[:errors] = ["The email or password are incorrect"]
+    flash[:errors] = "The email or password are incorrect"
     redirect '/'
   end
 end
@@ -33,10 +33,8 @@ get '/gravity' do
   processor = Processor.new
   processor.parse(client.file_list)
 
-  calculator = GravityCalculator.new
-
   @email = email
-  @calculator = calculator
+  @calculator = GravityCalculator.new
   @songs = processor.songs
   @documents = processor.documents
   @videos = processor.videos
@@ -52,8 +50,6 @@ get '/gravity' do
     total_gravity(@other, :other, @calculator)
 
   @size = processor.total_size
-
-
 
   haml :gravity
 end
